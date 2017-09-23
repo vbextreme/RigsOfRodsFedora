@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if [[ -d ./rigs-of-rods ]]; then
+	cd ./rigs-of-rods
+	git pull
+else
+	git clone https://github.com/RigsOfRods/rigs-of-rods.git
+	cd ./rigs-of-rods
+fi
+
+rm -f CMakeCache.txt
+find . -name CmakeFiles -exec rm -rf {} \;
+cmake -DwxWidgets_wxrc_EXECUTABLE=/usr/bin/wxrc-2.8 -DwxWidgets_CONFIG_EXECUTABLE=/usr/bin/wx-config-2.0 .
+make -j8
+if [[ $? != 0 ]]; then
+	echo "FAIL MAIKE"
+	exit 1
+fi
+
+sed -i -e 's/^PluginFolder=\/usr\/local\/lib/PluginFolder=\/usr\/lib64/' ./bin/plugins.cfg
+
+cd ..
+
+

@@ -1,0 +1,20 @@
+#!/bin/bash
+cd ./dependency
+if [[ -d ./socketw ]]; then
+	cd ./socketw
+	git pull
+else
+	git clone https://github.com/RigsOfRods/socketw.git
+	cd ./socketw
+fi
+
+make -j8 --silent "SW_CFLAGS=-I/usr/local/include/openssl" "SW_LIBS=-L~/usr/local/lib64 -lssl -lcrypto" shared
+if [[ $? != 0 ]]; then
+	echo "FAIL MAIKE"
+	exit 1
+fi
+
+sudo make install
+cd ../..
+
+

@@ -1,0 +1,11 @@
+#!/bin/bash
+sudo dnf install make automake gcc gcc-c++ kernel-devel doxygen redhat-rpm-config
+sudo dnf install boost-devel boost-mpich-devel boost-openmpi-devel boost-python3-devel libatomic-static
+sudo dnf install git cmake pkgconfig mercurial freetype-devel freeimage-devel zziplib-devel ois-devel mesa-libGL-devel mesa-libGLU-devel openal-soft-devel libX11-devel libXt-devel libXaw-devel libXrandr-devel openssl-devel libcurl-devel gtk2-devel wxGTK3-devel
+sudo dnf install ogre-devel
+sudo dnf install mygui-devel
+sudo dnf install ogre-pagedgeometry-devel
+sudo dnf install wxGTK-devel
+
+[[ ! -d ./dependency ]] && mkdir ./dependency
+

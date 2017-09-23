@@ -1,0 +1,19 @@
+#!/bin/bash
+cd ./dependency
+if [[ ! -d ./openssl-* ]]; then
+	wget -O /tmp/openssl.tgz https://www.openssl.org/source/openssl-1.0.2-latest.tar.gz
+	tar -zxf /tmp/openssl.tgz -C ./
+	rm /tmp/openssl.tgz
+fi
+
+cd ./openssl-*
+
+./config --prefix=/usr/local --openssldir=/usr/local/ssl 
+make -j8
+if [[ $? != 0 ]]; then
+	echo "FAIL MAIKE"
+	exit 1
+fi
+
+cd ../../
+

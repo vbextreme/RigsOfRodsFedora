@@ -1,0 +1,22 @@
+#!/bin/bash
+cd ./dependency
+if [[ -d ./ogre-caelum ]]; then
+	cd ./ogre-caelum
+	git pull
+else
+	git clone https://github.com/RigsOfRods/ogre-caelum
+	cd ./ogre-caelum
+fi
+
+cmake .
+make -j8
+if [[ $? != 0 ]]; then
+	echo "FAIL MAIKE"
+	exit 1
+fi
+
+echo 'INSTALL OGRE-CAELUM'
+sudo make install
+sudo ln -s /usr/local/lib/libCaelum.so /usr/lib64/OGRE
+
+cd ../../

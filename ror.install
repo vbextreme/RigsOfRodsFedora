@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cp ./ror.desktop /usr/share/applications/RoR.desktop
+cp ./ror.desktop /usr/share/applications/RoRConfig.desktop
+sed -i -e 's/RREXEC/RoR/' /usr/share/applications/RoR.desktop
+sed -i -e 's/RREXEC/RoRConfig/' /usr/share/applications/RoRConfig.desktop
+sed -i -e 's/RRNAME/RoR/' /usr/share/applications/RoR.desktop
+sed -i -e 's/RRNAME/RoRConfig/' /usr/share/applications/RoRConfig.desktop
+
+[[ ! -d /usr/local/games/ror ]] && mkdir /usr/local/games/ror
+cp -r ./rigs-of-rods/bin/* /usr/local/games/ror/
+
+
