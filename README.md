@@ -1,6 +1,6 @@
 # Rigs of Rods installer for Fedora
 script for build and install RoR game</br>
-utomatic download source</br>
+Automatic download source</br>
 Released under GPL v3
 
 ## Revision
@@ -15,7 +15,9 @@ $ ./dependency.dnf
 $ ./dependency.ogre-caelum
 $ ./dependency.mygui
 $ ./dependency.angelScript
-$ ./ror.build
+$ ./dependency.openssl10
+$ ./dependency.socketw
+$ sudo ./ror.build
 $ sudo ./ror.install
 ```
 
