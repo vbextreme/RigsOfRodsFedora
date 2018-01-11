@@ -17,7 +17,9 @@ $ ./dependency.dnf
 $ ./dependency.ogre-caelum
 $ ./dependency.mygui
 $ ./dependency.angelScript
-$ ./ror.build
+$ ./dependency.openssl10
+$ ./dependency.socketw
+$ sudo ./ror.build
 $ sudo ./ror.install
 ```
 
