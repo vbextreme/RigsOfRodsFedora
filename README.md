@@ -1,9 +1,10 @@
 # Rigs of Rods installer for Fedora
 script for build and install RoR game</br>
-utomatic download source</br>
+Automatic download source</br>
 Released under GPL v3
 
 ## Revision
+0.1 add missing package: openal, libcurl, boost-system
 0.0 all script</br>
 
 ## How To
