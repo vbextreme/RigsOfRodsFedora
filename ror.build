@@ -1,11 +1,24 @@
 #!/bin/bash
 
-if [[ -d ./rigs-of-rods ]]; then
+URB=0
+
+if [[ "$1" -eq "roolback" ]]; then
 	cd ./rigs-of-rods
-	git pull
+	git checkout -b fedora-stable-0
+	git reset --hard e9edfb7
+	git checkout master
+	exit 0
+elif [[ "$1" -eq "stable" ]]; then
+	git checkout fedora-stable-0
+	$URB=1;
 else
-	git clone https://github.com/RigsOfRods/rigs-of-rods.git
-	cd ./rigs-of-rods
+	if [[ -d ./rigs-of-rods ]]; then
+		cd ./rigs-of-rods
+		git pull origin master
+	else
+		git clone https://github.com/RigsOfRods/rigs-of-rods.git
+		cd ./rigs-of-rods
+	fi
 fi
 
 rm -f CMakeCache.txt
@@ -19,6 +32,7 @@ fi
 
 sed -i -e 's/^PluginFolder=\/usr\/local\/lib/PluginFolder=\/usr\/lib64/' ./bin/plugins.cfg
 
+[[ $URB == 1 ]] && git checkout master
 cd ..
 
 
