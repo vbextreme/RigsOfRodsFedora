@@ -9,6 +9,7 @@ if [[ "$1" -eq "roolback" ]]; then
 	git checkout master
 	exit 0
 elif [[ "$1" -eq "stable" ]]; then
+        cd ./rigs-of-rods
 	git checkout fedora-stable-0
 	$URB=1;
 else
