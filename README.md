@@ -4,10 +4,11 @@ Automatic download source</br>
 Released under GPL v3
 
 ## Revision
-0.4 more simple way to build stable version
-0.3 stable version
-0.2 auto rebuild angelcript
-0.1 add missing package: openal, libcurl, boost-system
+0.5 fix cd</br>
+0.4 more simple way to build stable version</br>
+0.3 stable version</br>
+0.2 auto rebuild angelcript</br>
+0.1 add missing package: openal, libcurl, boost-system</br>
 0.0 all script</br>
 
 ## How To

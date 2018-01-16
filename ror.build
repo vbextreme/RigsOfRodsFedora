@@ -18,6 +18,11 @@ if [[ "$MODE" == "stable" ]]; then
 	fi
 	git checkout fedora-stable-0
 	$URB=1;
+elif [[ "$MODE" == "commit" ]]; then
+	git show-ref
+	#502bd7a1c00b8c1d4b7355930c8d68d369e0cfa9 
+	cd ..
+	exit
 else
 	git checkout master
 	git pull origin master
@@ -26,9 +31,13 @@ fi
 rm -f CMakeCache.txt
 find . -name CmakeFiles -exec rm -rf {} \;
 cmake -DwxWidgets_wxrc_EXECUTABLE=/usr/bin/wxrc-2.8 -DwxWidgets_CONFIG_EXECUTABLE=/usr/bin/wx-config-2.0 .
+#cmake -DwxWidgets_wxrc_EXECUTABLE=/usr/bin/wxrc-3.0 -DwxWidgets_CONFIG_EXECUTABLE=/usr/bin/wx-config-3.0 .
+#cmake
+
 make -j8
 if [[ $? != 0 ]]; then
 	echo "FAIL MAIKE"
+	cd ..
 	exit 1
 fi
 
