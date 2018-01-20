@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=RRNAME
+GenericName=Rigs of Rods
+Comment=Open-source Simulation Games
+Exec=/usr/local/games/ror/RREXEC
+Icon=/usr/local/games/ror/resources/mygui/rorlogo.png
+Terminal=false
+Categories=Game;
+
