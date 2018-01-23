@@ -7,6 +7,8 @@ sudo dnf install ogre-devel
 sudo dnf install mygui-devel
 sudo dnf install ogre-pagedgeometry-devel
 sudo dnf install wxGTK-devel
+sudo dnf install openal-soft-devel
+
 
 [[ ! -d ./dependency ]] && mkdir ./dependency
 
