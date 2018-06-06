@@ -4,7 +4,7 @@ Automatic download source</br>
 Released under GPL v3
 
 ## Revision
-0.6 new stable release, add dependency rapidjson, add new version angelscript, add stable1
+0.6 new stable release, add dependency rapidjson, add new version angelscript, add stable1</br>
 0.5 fix cd</br>
 0.4 more simple way to build stable version</br>
 0.3 stable version</br>
