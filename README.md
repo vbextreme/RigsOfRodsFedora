@@ -28,6 +28,22 @@ $ sudo ./ror.install
 ### Uninstall
 todo
 
+### Stable1
+if build fail you can try to build stable1 version</br>
+</br>
+```
+$ git clone https://github.com/vbextreme/RigsOfRodsFedora.git
+$ cd RigsOfRodsFedora
+$ ./dependency.dnf
+$ ./dependency.ogre-caelum
+$ ./dependency.mygui
+
+$ ./dependency.angelScript stable1
+$ ./ror.build stable1
+
+$ sudo ./ror.install
+```
+
 ### Old Stable
 if build fail you can try to build old stable version</br>
 </br>
@@ -44,18 +60,3 @@ $ ./ror.build stable
 $ sudo ./ror.install
 ```
 
-### Stable
-if build fail you can try to build old stable version</br>
-</br>
-```
-$ git clone https://github.com/vbextreme/RigsOfRodsFedora.git
-$ cd RigsOfRodsFedora
-$ ./dependency.dnf
-$ ./dependency.ogre-caelum
-$ ./dependency.mygui
-
-$ ./dependency.angelScript stable1
-$ ./ror.build stable1
-
-$ sudo ./ror.install
-```
